@@ -1,4 +1,4 @@
-# Vincit_Pre-assignment
+# Vincit Pre-assignment
 
 ## Requirements
 **Python 3.8**
