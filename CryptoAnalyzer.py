@@ -5,7 +5,9 @@ import tkinter
 
 COIN_NAME = "bitcoin"
 CURRENCY = "eur"
-
+HELP = {"trend <start_date> <end_date>": "Longest downward trend",
+        "highest <start_date> <end_date>": "Highest trading volume",
+        "best_day <start_date> <end_date>": "Best days to buy and sell"}
 
 class Backend:
     def __init__(self):
@@ -124,6 +126,9 @@ class Backend:
         output_text = ""
         if input_text.lower() == "quit" or input_text.lower() == "exit":
             return "QUIT"
+        elif input_text.lower() == "help":
+            for help_command in HELP:
+                output_text += f"{help_command} : {HELP.get(help_command)}\n"
         # 3 arguments needed
         if len(input_parts) != 3:
             return output_text
@@ -151,7 +156,7 @@ class Backend:
                 output_text = f"Best pair of days to buy and sell {COIN_NAME} are {best_days[0]} and " \
                               f"{best_days[1]} for the inputs from {start_date.strftime('%Y-%m-%d')} and to " \
                               f"{end_date.strftime('%Y-%m-%d')}"
-        return output_text
+        return output_text.strip()
 
 
 class UI:
@@ -199,6 +204,7 @@ class UI:
 def main():
     ui = UI()
     backend = Backend()
+    print("Command line usage")
     while True:
         output_text = backend.input_parser(input("> "))
         if output_text == "QUIT":

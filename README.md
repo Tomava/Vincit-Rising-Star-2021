@@ -4,7 +4,12 @@
 **Python 3.8**
 
 ## Usage
-Running **CryptoAnalyzer.py** will start a GUI program with each wanted function as a separate button. Start and end dates can typed into the text boxes in ISO-format. If GUI is not wanted, program can be used with commands by just closing the GUI-window. The command line commands are as follows:
+Running **CryptoAnalyzer.py** will start a GUI program with each function as a separate button. Start and end dates be can typed into their text boxes in ISO-format. If GUI is not wanted, program can be used with commands by closing the GUI-window.\
+The command line commands are as follows:
+- Help:
+```
+help
+```
 - Longest downward trend:
 ```
 trend <start_date> <end_date>
